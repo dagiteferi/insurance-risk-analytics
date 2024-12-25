@@ -55,15 +55,28 @@ The historical insurance claim data spans from February 2014 to August 2015. It 
 To get started, clone the repository and install the required dependencies.
 
 ```bash 
-git clone https://github.com/dagiteferi/insurance-risk-analytics.git cd insurance-risk-analytics python -m venv venv source venv/bin/activate # On Windows use `.\venv\Scripts\activate` pip install -r requirements.txt
+git clone https://github.com/dagiteferi/insurance-risk-analytics.git
+```
+```bash 
+cd insurance-risk-analytics
+```
+```bash 
+python -m venv venv source venv/bin/activate
+```
+# On Windows use
+```bash 
+`.\venv\Scripts\activate`
+```
+```bash 
+ pip install -r requirements.txt
+```
 
-```
-```
+
 ### Usage
 Run the analysis scripts to perform data analysis and model training. Detailed instructions for each task can be found in the respective directories.
 
 ### Directory Structure
-
+```
 insurance-risk-analytics/
 ├── .vscode/
 │   └── settings.json
@@ -86,6 +99,6 @@ insurance-risk-analytics/
 ├── .gitignore
 ├── requirements.txt
 ├── README.md
-
+```
 ### Contributing
 Contributions are welcome! Please fork the repository and create a pull request to propose changes.
