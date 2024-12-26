@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 class exploratory_data_analysis:
-    def __init__(self,filepath) -> None:
+    def __init__(self,filepath) -> None: #read the data
         self.data = pd.read_csv(filepath,delimiter='|')
-    def basic_info(self):
+    def _info(self):
         print(f"info of the dataset{self.data.info()}")
         row ,col = self.data.shape
         print(f"the data has {col} X {row} ")
         print(f"discriptions of the data set  {self.data.describe()}")
-    def basic_info_about_specified_colmn(self,*args):
+    def _info_about_specified_colmn(self,*args):
         for ar in args:
             print(f"here is the discription about {ar} column {self.data[ar].describe()}")
     def missing_values(self):
