@@ -1,2 +1,8 @@
-data/
+# Ignore everything in the data directory
+data/*
+
+# Except for DVC files
+!data/*.dvc
+
+# Keep the week-3 folder ignored as per your original setup
 week-3/
