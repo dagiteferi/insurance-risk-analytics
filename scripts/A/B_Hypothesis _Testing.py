@@ -78,3 +78,13 @@ def ab_test_gender(data):
     t_test,p_value = ttest_ind(male_claims,female_claims)
 
     return t_test,p_value
+
+def report_results(p_value,alpha=0.05):
+    '''
+    Report the results of hypothesis tesing '''
+
+    if p_value < alpha:
+        return "Reject the null hypothesis (statistically significant)"
+    else:
+        return "Fail to reject the null hypothesis (not statistically significant)" 
+    
