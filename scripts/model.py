@@ -40,3 +40,10 @@ def define_parameter_grid_gridsearchcv(lr_model,dt_model,rfr_model,xgb_model):
     rf_grid = GridSearchCV(rfr_model, param_grid_rf, cv=5, scoring='r2')
     xgb_grid = GridSearchCV(xgb_model, param_grid_xgb, cv=5, scoring='r2')
     return lr_grid,dt_grid,rf_grid,xgb_grid
+
+def train_each_model_by_gridsearchcv(lr_grid,dt_grid,rf_grid,xgb_grid,X_train_scaled,y_train_claims):
+    lr_grid.fit(X_train_scaled, y_train_claims)#instance for the linear regression model.
+    dt_grid.fit(X_train_scaled, y_train_claims)#instance for the decision tree regressor model.
+    rf_grid.fit(X_train_scaled, y_train_claims)#instance for the random forest regressor model.
+    xgb_grid.fit(X_train_scaled, y_train_claims)#instance for the XGBoost regressor model.
+    return lr_grid,dt_grid,rf_grid,xgb_grid
