@@ -59,3 +59,14 @@ def train_each_model(lr_model, dt_model, rfr_model, xgb_model, X_train_scaled, y
     xgb_model.fit(X_train_scaled, y_train_claims)#The XGBoost regressor model instance.
     print("finfish xgb")
     return lr_model, dt_model, rfr_model, xgb_model
+
+def model_Test(model,x_test,y_test):#function evaluates the performance
+    #  make predictions
+    y_pred = model.predict(x_test)
+
+    # calcualte evaluation metrics 
+    mae = mean_absolute_error(y_test,y_pred)
+    mse= mean_squared_error(y_test,y_pred)
+    r2 = r2_score(y_test,y_pred)
+
+    return mae , mse , r2 , y_pred
