@@ -4,3 +4,6 @@ from sklearn.model_selection import  train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from scipy import sparse
 from sklearn.decomposition import PCA
+
+def data_load(path):
+    return pd.read_csv(path)
