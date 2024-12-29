@@ -13,7 +13,7 @@ def building_model():
 
     return lr_model,dt_model,rfr_model,xgb_model
 
-def define_parameter_grid_for_gridsearchcv(lr_model,dt_model,rfr_model,xgb_model):
+def define_parameter_grid_gridsearchcv(lr_model,dt_model,rfr_model,xgb_model):
     param_grid_lr = {
     'fit_intercept': [True]
     }
