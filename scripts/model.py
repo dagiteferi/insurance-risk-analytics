@@ -47,3 +47,15 @@ def train_each_model_by_gridsearchcv(lr_grid,dt_grid,rf_grid,xgb_grid,X_train_sc
     rf_grid.fit(X_train_scaled, y_train_claims)#instance for the random forest regressor model.
     xgb_grid.fit(X_train_scaled, y_train_claims)#instance for the XGBoost regressor model.
     return lr_grid,dt_grid,rf_grid,xgb_grid
+
+def train_each_model(lr_model, dt_model, rfr_model, xgb_model, X_train_scaled, y_train_claims):
+     # Train each model without GridSearchCV
+    lr_model.fit(X_train_scaled, y_train_claims)# linear regression model instance.
+    print("finfish lr")
+    dt_model.fit(X_train_scaled, y_train_claims)#decision tree regressor model instance.
+    print("finfish dt")
+    rfr_model.fit(X_train_scaled, y_train_claims)#random forest regressor model instance.
+    print("finfish rfr")
+    xgb_model.fit(X_train_scaled, y_train_claims)#The XGBoost regressor model instance.
+    print("finfish xgb")
+    return lr_model, dt_model, rfr_model, xgb_model
