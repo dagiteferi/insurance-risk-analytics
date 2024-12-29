@@ -45,3 +45,16 @@ def one_hot_encoding(data,catagoricalcols):
     pca = PCA(n_components=100)  # Adjust n_components based on the explained variance
     reduced_data = pca.fit_transform(final_data.toarray())
     return reduced_data
+
+def target_variable_and_features(data):#separates the target variable (TotalClaims) from the feature variables in the DataFrame.
+    X= data.drop(columns=['TotalClaims'])
+    y_claims = data['TotalClaims']
+    return X ,y_claims
+def train_test_split_selection(X , y_claims):# splits the data into training and testing sets.
+    x_train , x_test ,  y_train_claims , y_test_claims = train_test_split(X,y_claims , test_size=0.2, random_state=42)
+    return x_train , x_test ,  y_train_claims , y_test_claims
+def feature_scaling(x_train , x_test):#function scales the feature variables using standard scaling.
+    scalar = StandardScaler()
+    x_trian_scaled = scalar.fit_transform(x_train)
+    x_test_scaled = scalar.transform(x_test)
+    return x_trian_scaled ,x_test_scaled
