@@ -50,7 +50,7 @@ def target_variable_and_features(data):#separates the target variable (TotalClai
     X= data.drop(columns=['TotalClaims'])
     y_claims = data['TotalClaims']
     return X ,y_claims
-def train_test_split(X , y_claims):# splits the data into training and testing sets.
+def train_test_split_selection(X , y_claims):# splits the data into training and testing sets.
     x_train , x_test ,  y_train_claims , y_test_claims = train_test_split(X,y_claims , test_size=0.2, random_state=42)
     return x_train , x_test ,  y_train_claims , y_test_claims
 def feature_scaling(x_train , x_test):#function scales the feature variables using standard scaling.
