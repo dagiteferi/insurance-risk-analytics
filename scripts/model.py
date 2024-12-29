@@ -5,11 +5,11 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error , mean_squared_error , r2_score
 import xgboost as xgb
 
-def building_model():
-    lr_model = LinearRegression()#creates an instance of the LinearRegression model from
-    dt_model = DecisionTreeRegressor(random_state=42)# creates an instance of the DecisionTreeRegressor model 
-    rfr_model = RandomForestRegressor(random_state=42)#creates an instance of the RandomForestRegressor model
-    xgb_model = xgb.XGBRegressor(random_state=42)#creates an instance of the XGBRegressor model from the xgboost library.
+def model_building():
+    lr_model = LinearRegression()
+    dt_model = DecisionTreeRegressor(random_state=42)
+    rfr_model = RandomForestRegressor(random_state=42)
+    xgb_model = xgb.XGBRegressor(random_state=42)
 
     return lr_model,dt_model,rfr_model,xgb_model
 
