@@ -29,3 +29,13 @@ def shap_for_decision_tree(dt_model,x_test):
 
     # Visualize feature importance
     shap.summary_plot(shap_values_dt, x_test, plot_type="bar")
+
+def shap_for_linear_regression(lr_model,x_test):
+    #  an explainer for Linear Regression
+    explainer_lr = shap.Explainer(lr_model)
+
+    #  SHAP values
+    shap_values_lr = explainer_lr(x_test)
+
+    # Visualize feature importance
+    shap.summary_plot(shap_values_lr, x_test, plot_type="bar")
